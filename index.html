@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+    <title>Máquina de vendas JS ™</title>
+	<!-- META TAGS COMPATIBILIDADE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge" >
+	<script defer type="text/javascript" src="js/app.js"></script>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"> -->
+	</head>
+	<body>
+		<header>
+			<h1>Máquina de vendas JS ™</h1>
+			
+		</header>
+		<main>
+			<dialog open class="init-dialog">
+			  <p>Encontre o código do item que deseja comprar. Geralmente é listado em cada produto e organizado por linha ou coluna.</p>
+			  <p>Insira suas notas de dinheiro e moedas para pagar pelos itens que deseja. Como alternativa, deslize, insira ou toque em um cartão de crédito/débito.</p>
+			  <p>Se o item ficar preso durante a dispensação, você pode tentar abrir e fechar a porta da área de coleta para criar uma sucção que puxa o item para baixo.</p>
+
+			  <button class="fechar-dialog">Fechar</button>
+			</dialog>
+			
+			<dialog class="compra-dialog">
+			  <div id="divAdd">
+					
+					<label for="coin" id="coinBlk">Adicionar Moeda:
+						<select id="coin">
+							<option selected value="0.05">R$ 0.05</option>
+							<option value="0.10">R$ 0.10</option>
+							<option value="0.25">R$ 0.25</option>
+							<option value="0.50">R$ 0.50</option>
+							<option value="1.00">R$ 1.00</option>
+						</select><button id="addCoinBtn">Adicionar <br />R$ 0.05</button>
+					</label>
+
+					<label for="bill" id="billBlk">Adicionar Cédula:
+						<select id="bill">
+							<option selected value="1.00">R$ 1.00</option>
+							<option value="2.00">R$ 2.00</option>
+							<option value="5.00">R$ 5.00</option>
+							<option value="10.00">R$ 10.00</option>
+							<option value="20.00">R$ 20.00</option>
+							<option value="50.00">R$ 50.00</option>
+							<option value="100.00">R$ 100.00</option>
+							<option disabled value="200.00">R$ 200.00</option>
+						</select><button id="addBillBtn">Adicionar <br />R$ 1.00</button>
+					</label>
+				</div>
+			  <button class="fechar-dialog">Fechar</button>
+			</dialog>
+			
+			<section id="sectLeft">
+				<div class="productsContainer">
+					<div data-letterid="A" data-numberid="1" class="item">
+						<h2>Item 1</h2>
+						<img src="img/A1.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+
+					<div data-letterid="B" data-numberid="1"  class="item">
+						<h2>Item 2</h2>
+						<img src="img/B1.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+
+					<div data-letterid="C" data-numberid="1" class="item">
+						<h2>Item 3</h2>
+						<img src="img/C1.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+					
+					<div data-letterid="D" data-numberid="1" class="item">
+						<h2>Item 4</h2>
+						<img src="img/D1.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+					
+					<div data-letterid="A" data-numberid="2" class="item">
+						<h2>Item 5</h2>
+						<img src="img/A2.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+
+					<div data-letterid="B" data-numberid="2" class="item">
+						<h2>Item 6</h2>
+						<img src="img/B2.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+
+					<div data-letterid="C" data-numberid="2" class="item">
+						<h2>Item 7</h2>
+						<img src="img/C2.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+					
+					<div data-letterid="D" data-numberid="2" class="item">
+						<h2>Item 8</h2>
+						<img src="img/D2.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+					
+					<div data-letterid="A" data-numberid="3" class="item">
+						<h2>Item 9</h2>
+						<img src="img/A3.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+
+					<div data-letterid="B" data-numberid="3" class="item">
+						<h2>Item 10</h2>
+						<img src="img/B3.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+
+					<div data-letterid="C" data-numberid="3" class="item">
+						<h2>Item 11</h2>
+						<img src="img/C3.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+					
+					<div data-letterid="D" data-numberid="3" class="item">
+						<h2>Item 12</h2>
+						<img src="img/D3.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+					
+					<div data-letterid="A" data-numberid="4" class="item">
+						<h2>Item 13</h2>
+						<img src="img/A4.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+
+					<div data-letterid="B" data-numberid="4" class="item">
+						<h2>Item 14</h2>
+						<img src="img/B4.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+
+					<div data-letterid="C" data-numberid="4" class="item">
+						<h2>Item 15</h2>
+						<img src="img/C4.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+					
+					<div data-letterid="D" data-numberid="4" class="item">
+						<h2>Item 16</h2>
+						<img src="img/D4.png" alt="" />
+						<p>R$ 1.00</p>
+					</div>
+				</div>
+			</section>
+			
+			<section id="sectRight">
+				<div class="displayContainer">
+				<span id='responseDate'>--</span>
+				<span id='responseHour'>--</span>
+				<span id='responseTxt'>txt output</span>
+			</div>
+				<div id="displayTxt">
+				
+				</div>
+							
+				
+				<label>Selecionar id:
+				<div class="button-grid">
+					<button class="button btn-letter">A</button>
+					<button class="button btn-letter">B</button>
+					<button class="button btn-letter">C</button>
+					<button class="button btn-letter">D</button>
+					<button class="button btn-number">1</button>
+					<button class="button btn-number">2</button>
+					<button class="button btn-number">3</button>
+					<button class="button btn-number">4</button>
+					<button id="btnCorrigir" class="button">Corrigir</button>
+					<button id="btnConfirmar" class="button">Confirmar</button>
+				</div></label>
+				<div id="blkimg" style="">
+					<img src="img/00insert2.png" id="imgInsertBill" style="cursor: url(../img/00cursorInsert.png), auto;transform:scale(0.989);width:35%;height:auto;margin:auto" alt="" />
+					<img src="img/00insert1.png" id="imgInsertCoin" style="cursor: url(../img/00cursorInsert.png), auto;transform:scale(0.889);width:25%;height:auto;margin:auto" alt="" />
+				</div>
+			</section>
+			
+			
+			
+		</main>
+		
+	</body>
+</html>
